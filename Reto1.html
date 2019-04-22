@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Calcuadora</title>
+    <link rel="stylesheet" href="css/bootstrapReto1.min.css">
+    <link rel="stylesheet" href="css/reto1.css">
+    <link rel="stylesheet" href="css/miStilo.css">
+</head>
+
+<body>
+    <nav>
+        <div class="logo">
+            <h3 style="color: aliceblue">Bootcamp</h3>
+        </div>
+        <ul class="nav-links">
+            <li>
+                <a href="index.html">Inicio</a>
+            </li>
+            <li>
+                <a href="Reto1.html">Reto 1</a>
+            </li>
+            <li>
+                <a href="reto2.html">Reto 2</a>
+            </li>
+            <li>
+                <a href="reto3.html">Reto 3</a>
+            </li>
+            <li>
+                <a href="Reto4.html">Reto 4</a>
+            </li>
+            <li>
+                <a href="reto5.html">Reto 5</a>
+            </li>
+        </ul>
+        <div class="burger">
+            <div class="line1"></div>
+            <div class="line2"></div>
+            <div class="line3"></div>
+        </div>
+    </nav>
+
+    <div class="container table-responsive">
+        <table>
+            <tr>
+                <td colspan="4">
+                    <h3>Mi Calculadora</h3>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="4">
+                    <div><input type="text" class="pantalla btn-primary btn-block" id="s_pantalla" disabled></div>
+                    <div><input type="text" class="pantalla btn-primary btn-block" id="p_pantalla" disabled></div>
+                </td>
+            </tr>
+            <tr>
+                <td><button class="btn btn-danger btn-block operaciones" id="" onclick="limpiar()">C</button></td>
+                <td><button class="btn btn-info btn-block" id="" onclick="eliminarCifra()">CE</button></td>
+                <td><button class="btn btn-primary btn-block" id="" onclick="potencia()">x2</button></td>
+                <td><button class="btn btn-primary btn-block" id="" onclick="operar('/')">/</button></td>
+            </tr>
+            <tr>
+                <td><button class="btn btn-success btn-block" id="btn7" onclick="numeros(7)">7</button></td>
+                <td><button class="btn btn-success btn-block" id="btn8" onclick="numeros(8)">8</button></td>
+                <td><button class="btn btn-success btn-block" id="btn9" onclick="numeros(9)">9</button></td>
+                <td><button class="btn btn-primary btn-block" id="" onclick="operar('*')">*</button></td>
+            </tr>
+            <tr>
+                <td><button class="btn btn-success btn-block" id="btn4" onclick="numeros(4)">4</button></td>
+                <td><button class="btn btn-success btn-block" id="btn5" onclick="numeros(5)">5</button></td>
+                <td><button class="btn btn-success btn-block" id="btn6" onclick="numeros(6)">6</button></td>
+                <td><button class="btn btn-primary btn-block" id="" onclick="operar('-')">-</button></td>
+            </tr>
+            <tr>
+                <td><button class="btn btn-success btn-block" id="btn1" onclick="numeros(1)">1</button></td>
+                <td><button class="btn btn-success btn-block" id="btn2" onclick="numeros(2)">2</button></td>
+                <td><button class="btn btn-success btn-block" id="btn3" onclick="numeros(3)">3</button></td>
+                <td><button class="btn btn-primary btn-block" id="" onclick="operar('+')">+</button></td>
+            </tr>
+            <tr>
+                <td><button class="btn btn-success btn-block" id="btn0" value="0" onclick="numeros(0)">0</button></td>
+                <td><button class="btn btn-primary btn-block" id="" value="." onclick="numeros('.')">.</button></td>
+                <td colspan="2"><button class="btn btn-info btn-block" id="" value="=" onclick="resultado()">=</button>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <!--script-->
+    <script src="js/index.js"></script>
+    <script src="js/reto1.js"></script>
+</body>
+
+</html>

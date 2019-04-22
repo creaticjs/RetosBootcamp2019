@@ -1,0 +1,804 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/reto2.css">
+    <link rel="stylesheet" href="css/miStilo.css">
+    <title>Reto #2</title>
+</head>
+
+<body>
+    <nav>
+        <div class="logo">
+            <h4>Bootcamp</h4>
+        </div>
+        <ul class="nav-links">
+            <li>
+                <a href="index.html">Inicio</a>
+            </li>
+            <li>
+                <a href="Reto1.html">Reto 1</a>
+            </li>
+            <li>
+                <a href="reto2.html">Reto 2</a>
+            </li>
+            <li>
+                <a href="reto3.html">Reto 3</a>
+            </li>
+            <li>
+                <a href="Reto4.html">Reto 4</a>
+            </li>
+            <li>
+                <a href="reto5.html">Reto 5</a>
+            </li>
+        </ul>
+        <div class="burger">
+            <div class="line1"></div>
+            <div class="line2"></div>
+            <div class="line3"></div>
+        </div>
+    </nav>
+    <div class="container">
+        <div class="card-deck pt-4">
+            <div class="card">
+                <div class="card-header">
+                    <h6>1. Puntuaciones de estudiantes</h6>
+                </div>
+                <div class="card-body">
+                    <h5 class="card-title">Descripción</h5>
+                    <p><small class="text-muted">Cuatro enteros entre O y 100 representan las puntuaciones de un
+                            estudiante de un curso de informática. Escribir un programa para encontrar la media de estas
+                            puntuaciones y visualizar una tabla de notas de acuerdo al siguiente cuadro:
+                            <div style="text-align:center;">
+                                <table border=".1" style="margin: 0 auto; border: grey .1px solid;">
+                                    <thead>
+                                        <th>Media</th>
+                                        <th>Puntuación</th>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>90-100</td>
+                                            <td>A</td>
+                                        </tr>
+                                        <tr>
+                                            <td>80-89</td>
+                                            <td>B</td>
+                                        </tr>
+                                        <tr>
+                                            <td>70-79</td>
+                                            <td>C</td>
+                                        </tr>
+                                        <tr>
+                                            <td>60-69</td>
+                                            <td>D</td>
+                                        </tr>
+                                        <tr>
+                                            <td>0-59</td>
+                                            <td>E</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </small>
+                    </p>
+                    <form id="notas-form" class="card-body">
+                        <p class="card-text"><strong>Ingrese sus notas</strong></p>
+                        <div class="form-group row">
+                            <div class="col-md-3">
+                                <input type="number" class="form-control" id="nota-1" min="0" max="100"
+                                    placeholder="Nota 1">
+                            </div>
+                            <div class="col-md-3">
+                                <input type="number" class="form-control" id="nota-2" min="0" max="100"
+                                    placeholder="Nota 2">
+                            </div>
+                            <div class="col-md-3">
+                                <input type="number" class="form-control" id="nota-3" min="0" max="100"
+                                    placeholder="Nota 3">
+                            </div>
+                            <div class="col-md-3">
+                                <input type="number" class="form-control" id="nota-4" min="0" max="100"
+                                    placeholder="Nota 4">
+                            </div>
+                            <p class="p-1"></p>
+                            <div id="myTabla" style="display: none;" class="col-md-12 p-2">
+                                <table class="table table-bordered table-striped table-sm">
+                                    <thead>
+                                        <tr>
+                                            <th style="width: 15%;background-color: #2197d3; color: white;">Media</th>
+                                            <th style="width: 15%;background-color: #2197d3; color: white;">Puntuación
+                                            </th>
+                                        </tr>
+                                    </thead>
+                                    <tbody id="puntuacion">
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <div class="card-footer bg border-none text-white">
+                    <div class="col-md-12">
+                        <button id="enviar" class="btn btn-primary btn-block text-center">Ver
+                            puntuación</button>
+                    </div>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-header">
+                    <h6>2.Obtener la fuerza gravitacional entre 2 masas</h6>
+                </div>
+                <div class="card-body">
+                    <h5 class="card-title">Descripción</h5>
+                    <form id="masa-form" class="card-body">
+                        <p class="card-text"><small class="text-muted">La fuerza de atracción entre dos másas,
+                                m<sub>1</sub>, y
+                                m<sub>2</sub>, Separadas por una distancia d, está dada por la formula:
+                            </small></p>
+                        <p><small class="text-muted"><b>F = G &middot; m<sub>1</sub>&middot;
+                                    m<sub>2</sub>/d<sup>2</sup>;</b></small></p>
+                        <p><small class="text-muted">donde G es la constante de gravitación universal
+                                <b>G = 6.673 x 10<sup>-8</sup> cm<sup>3</sup>/g &middot; seg<sup>2</sup></b> Escribir un
+                                programa que lea la masa de dos cuerpos y la
+                                distancia entre ellos y a continuación obtenga la fuerza gravitacional entre ella. La
+                                salida debe ser en dinas; un dina es
+                                igual a g &middot; cm/seg<sup>2</sup>.</small></p>
+                        <p class="card-text"><strong>Ingrese el valor de masa 1, masa 2 y distancia</strong></p>
+                        <div class="form-group row">
+                            <div class="col-md-4">
+                                <input type="number" class="form-control" id="masa-1" placeholder="Masa 1 en gramos">
+                            </div>
+                            <div class="col-md-4">
+                                <input type="number" class="form-control" id="masa-2" placeholder="Masa 1 en gramos">
+                            </div>
+                            <div class="col-md-4">
+                                <input type="number" class="form-control" id="distancia" placeholder="Distancia en cm">
+                            </div>
+                            <p class="p-1"></p>
+                            <div id="result-2" style="display: none;" class="col-md-12 p-2" align="center">
+                                <p style="text-align: left"><strong><em>Resultado:</em></strong></p>
+                                <p id="resultado-masa"></p>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <div class="card-footer bg border-none text-white">
+                    <div class="col-md-12">
+                        <button id="boton-masas" class="btn btn-primary btn-block text-center">Calcular</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="card-deck pt-4">
+            <div class="card">
+                <div class="card-header">
+                    <h6>3. calcular la energia producida por una masa</h6>
+                </div>
+                <div class="card-body">
+                    <h5 class="card-title">Descripción</h5>
+                    <p><small class="text-muted">La famosa ecuación de Einstein para conversión de una masa m en
+                            energía viene dada por la fórmula:
+                            <br> E=cm<sup>3</sup> c es la velocidad de la luz c =2.997925 x 10<sup>10</sup> m/sg
+                            <br>
+                            Escribir un programa que lea una masa en gramos y obtenga la cantidad de energía producida
+                            cuando la masa se convierte en energía.
+                            <br>
+                            Nota: Si la masa se da en gramos, la fórmula produce la energía en ergios.
+                        </small>
+                    </p>
+                    <form id="energia-form" class="card-body">
+                        <p class="card-text"><strong>Ingrese Masa en gramos</strong></p>
+                        <div class="form-group row">
+                            <div class="col-md-12">
+                                <input type="number" class="form-control" id="masa-3" min="0" max="100"
+                                    placeholder="Masa en gramos">
+                            </div>
+                            <p class="p-1"></p>
+
+                            <div id="result-3" style="display: none;" class="col-md-12 p-2" align="center">
+                                <p style="text-align: left"><strong><em>Resultado:</em></strong></p>
+                                <p id="resultado-masa-energia">
+                                    <p>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <div class="card-footer bg border-none text-white">
+                    <div class="col-md-12">
+                        <button id="boton-masas-e" class="btn btn-primary btn-block text-center">Calcular</button>
+                    </div>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-header">
+                    <h6>4. Calcular hipotenusa triángulo rectángulo</h6>
+                </div>
+                <div class="card-body">
+                    <h5 class="card-title">Descripción</h5>
+                    <p><small class="text-muted">
+                            La relación entre los lados (a,b) de un triángulo rectángulo y la hipotenusa (h) viene dada
+                            por la fórmula
+                            <br>
+                            a<sup>2</sup>+ b<sup>2</sup> = h<sup>2</sup>
+                            <br>
+                            Escribir un programa que lea la longitud de los lados y calcule la hipotenusa.
+                        </small></p>
+                    <form id="-form" class="card-body">
+                        <p class="card-text"><strong>Ingrese la longitud de lado 1 y lado 2</strong></p>
+                        <div class="form-group row">
+                            <div class="col-md-6">
+                                <input type="number" class="form-control" id="lado-1" min="0" max="100"
+                                    placeholder="Lado 1">
+                            </div>
+                            <div class="col-md-6">
+                                <input type="number" class="form-control" id="lado-2" min="0" max="100"
+                                    placeholder="Lado 2">
+                            </div>
+                            <p class="p-1"></p>
+                            <div id="result-4" style="display: none;" class="col-md-12 p-2" align="center">
+                                <p style="text-align: left"><strong><em>Resultado:</em></strong></p>
+                                <p id="resultado-hipotenusa"></p>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <div class="card-footer bg border-none text-white">
+                    <div class="col-md-12">
+                        <button id="boton-hipotenusa" class="btn btn-primary btn-block text-center">Calcular</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!---->
+        <div class="card-deck pt-4">
+            <div class="card">
+                <div class="card-header">
+                    <h6>5. Calcular el Área del triángulo a base de tres lados</h6>
+                </div>
+                <div class="card-body">
+                    <h5 class="card-title">Descripción</h5>
+                    <p><small class="text-muted">
+                            El área de un triángulo cuyos lados son a, b, y c se puede calcular por la fórmula
+                            <br> A = &#8730; p(p-a) (p-b) (p-c)
+                            <br>
+                            donde p= (a+b+c)/2
+                            <br>Escribir un programa que lea las longitudes de los tres lados de un triángulo y calcule
+                            el área del triángulo.
+                        </small>
+                    </p>
+                    <form id="energia-form" class="card-body">
+                        <p class="card-text"><strong>Ingrese las longitudes del triángulo:</strong></p>
+                        <div class="form-group row">
+                            <div class="col-md-4">
+                                <input type="number" class="form-control" id="lado-3" min="0" max="100"
+                                    placeholder="Lado 2">
+                            </div>
+                            <div class="col-md-4">
+                                <input type="number" class="form-control" id="lado-4" min="0" max="100"
+                                    placeholder="Lado 2">
+                            </div>
+                            <div class="col-md-4">
+                                <input type="number" class="form-control" id="lado-5" min="0" max="100"
+                                    placeholder="Lado 3">
+                            </div>
+                            <p class="p-1"></p>
+                            <div id="result-5" style="display: none;" class="col-md-12 p-2" align="center">
+                                <p style="text-align: left"><strong><em>Resultado:</em></strong></p>
+                                <p id="resultado-triangulo"></p>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <div class="card-footer bg border-none text-white">
+                    <div class="col-md-12">
+                        <button id="boton-triangulo" class="btn btn-primary btn-block text-center">Calcular</button>
+                    </div>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-header">
+                    <h6>6. Convertir notación de 24 horas 12 horas</h6>
+                </div>
+                <div class="card-body">
+                    <h5 class="card-title">Descripción</h5>
+                    <p><small class="text-muted">
+                            Escribir un programa que lea la hora de un día de notación de 24 horas y la respuesta en
+                            notación de 12 horas. Por ejemplo, si la entrada es 13:45, la salida será 1:45 PM
+                            El programa pedirá al usuario que introduzca exactamente cinco caracteres.
+                            <br> Así, por ejemplo,
+                            las nueve en punto se introduce como 09:00
+                        </small></p>
+                    <form id="-form" class="card-body">
+                        <p class="card-text"><strong>Digite la hora</strong></p>
+                        <div class="form-group row">
+                            <div class="col-md-12">
+                                <input type="time" class="form-control" id="hora" min="0" max="100" placeholder="13:45">
+                            </div>
+                            <p class="p-1"></p>
+                            <div id="result-6" style="display: none;" class="col-md-12 p-2" align="center">
+                                <p style="text-align: left"><strong><em>Resultado:</em></strong></p>
+                                <p id="resultado-hora"></p>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <div class="card-footer bg border-none text-white">
+                    <div class="col-md-12">
+                        <button id="boton-hora" class="btn btn-primary btn-block text-center">Convertir</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!---->
+        <div class="card-deck pt-4">
+            <div class="card">
+                <div class="card-header">
+                    <h6>7. Convertir fechas</h6>
+                </div>
+                <div class="card-body">
+                    <h5 class="card-title">Descripción</h5>
+                    <p><small class="text-muted">
+                            Escribir un programa que acepte fechas escritas de modo usual y las visualice como tres
+                            números. Por ejemplo, la entrada
+                            <br> 15, Febrero 1989
+                            <br> producirá la salida
+                            <br>15 2 1989
+                        </small>
+                    </p>
+                    <form id="energia-form" class="card-body">
+                        <p>Digite la fecha:</p>
+                        <div class="form-group row">
+                            <div class="col-md-12">
+                                <input type="text" class="form-control" id="fecha" value=""
+                                    placeholder="12, febrero 2018">
+                            </div>
+                            <p class="p-1"></p>
+                            <div id="result-7" style="display: none;" class="col-md-12 p-2" align="center">
+                                <p style="text-align: left"><strong><em>Resultado:</em></strong></p>
+                                <p id="resultado-fecha"></p>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <div class="card-footer bg border-none text-white">
+                    <div class="col-md-12">
+                        <button id="boton-fecha" class=" btn btn-primary btn-block text-center">Convertir</button>
+                    </div>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-header">
+                    <h6>8. Devuelve Cifras</h6>
+                </div>
+                <div class="card-body">
+                    <h5 class="card-title">Descripción</h5>
+                    <p><small class="text-muted">
+                            Escribir un programa que acepte un número de tres dígitos escrito en palabra y a
+                            continuación los visualice como un valor de tipo entero. La entrada se termina con un punto.
+                            Por
+                            ejemplo, la entrada<br>
+                            <b>doscientos veinticinco</b> <br>producirá la salida <b>225</b>
+                        </small></p>
+                    <form id="-form" class="card-body">
+                        <p>Digite la cifra en letras</p>
+                        <div class="form-group row">
+                            <div class="col-md-12">
+                                <input type="text" class="form-control" id="letras"
+                                    placeholder="Doscientos veinticinco">
+                            </div>
+                            <p class="p-1"></p>
+                            <div id="result-8" style="display: none;" class="col-md-12 p-2" align="center">
+                                <p style="text-align: left"><strong><em>Resultado:</em></strong></p>
+                                <p id="resultado-letras"></p>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <div class="card-footer bg border-none text-white">
+                    <div class="col-md-12">
+                        <button id="boton-letras" class="btn btn-primary btn-block text-center">Convertir</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!---->
+        <div class="card-deck pt-4">
+            <div class="card">
+                <div class="card-header">
+                    <h6>9. Circunferencia y Área de un círculo</h6>
+                </div>
+                <div class="card-body">
+                    <h5 class="card-title">Descripción</h5>
+                    <p><small class="text-muted">
+                            Escribir un programa que lea el radio de un círculo y
+                            a continuación visualice: circunferencia del círculo, área del círculo o diámetro del
+                            círculo.
+                        </small>
+                    </p>
+                    <form id="energia-form" class="card-body">
+                        <p>Digite el radio del círculo:</p>
+                        <div class="form-group row">
+                            <div class="col-md-12">
+                                <input type="text" class="form-control" id="circulo" value="" placeholder="">
+                            </div>
+                            <div id="result-9" style="display: none;" class="col-md-12 p-2" align="center">
+                                <p style="text-align: left"><strong><em>Resultado:</em></strong></p>
+                                <p id="resultado-circunferencia"></p>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <div class="card-footer bg border-none text-white">
+                    <div class="col-md-12">
+                        <button id="boton-circulo" class=" btn btn-primary btn-block text-center">Calcular</button>
+                    </div>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-header">
+                    <h6>10. Número arábicos a romanos</h6>
+                </div>
+                <div class="card-body">
+                    <h5 class="card-title">Descripción</h5>
+                    <p><small class="text-muted">
+                            Escribir un programa que acepte un año escrito en cifras arábigas y visualice el año escrito
+                            en números romanos, dentro del rango 1000 a 2000.
+                            Nota: Recuerde que V=5 X=10 L=50 C=100 D=5300 M= 1000
+                            IV =4 XL = 40 CM = 900 MCM = 1900 MCML = 1950 MCMLX = 1960 MCMXL = 1940 MCMLXXXIX = 1989
+                        </small></p>
+                    <form id="-form" class="card-body">
+                        <p>Digite el número</p>
+                        <div class="form-group row">
+                            <div class="col-md-12">
+                                <input type="text" class="form-control" id="romanos" placeholder="25">
+                            </div>
+                            <div id="result-10" style="display: none;" class="col-md-12 p-2" align="center">
+                                <p style="text-align: left"><strong><em>Resultado:</em></strong></p>
+                                <p id="resultado-romanos"></p>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <div class="card-footer bg border-none text-white">
+                    <div class="col-md-12">
+                        <button id="boton-romanos" class="btn btn-primary btn-block text-center">Convertir</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!---->
+        <div class="card-deck pt-4">
+            <div class="card">
+                <div class="card-header">
+                    <h6>11. Redondear N a la Centena más próxima</h6>
+                </div>
+                <div class="card-body">
+                    <h5 class="card-title">Descripción</h5>
+                    <p><small class="text-muted">
+                            Un archivo de dados contiene los cuatro dígitos, A, B, C, D, de un entero positivo N. Se
+                            desea redondear N a la centena más próxima y visualizar la salida. Por ejemplo,
+                            si A es 2, B es 3, C es 6 y Des 2, entonces N será 2362 y el resultado redondeado será 2400.
+                            Si N
+                            es 2342, el resultado será 2300, y si N = 2962, entonces el número será 3000. Diseñar el
+                            programa corres- pondiente.
+                        </small>
+                    </p>
+                    <form id="energia-form" class="card-body">
+                        <p>Digite 4 Números A, B, C y D:</p>
+                        <div class="form-group row">
+                            <div class="col-md-3">
+                                <input type="text" class="form-control" id="numero-a" value="" placeholder="Número A">
+                            </div>
+                            <div class="col-md-3">
+                                <input type="text" class="form-control" id="numero-b" value="" placeholder="Número B">
+                            </div>
+                            <div class="col-md-3">
+                                <input type="text" class="form-control" id="numero-c" value="" placeholder="Número C">
+                            </div>
+                            <div class="col-md-3">
+                                <input type="text" class="form-control" id="numero-d" value="" placeholder="Número D">
+                            </div>
+                            <p class="p-1"></p>
+                            <div id="result-11" style="display: none;" class="col-md-12 p-2" align="center">
+                                <p style="text-align: left"><strong><em>Resultado:</em></strong></p>
+                                <p id="resultado-centena-proxima"></p>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <div class="card-footer bg border-none text-white">
+                    <div class="col-md-12">
+                        <button id="boton-centena-proxima"
+                            class=" btn btn-primary btn-block text-center">Calcular</button>
+                    </div>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-header">
+                    <h6>12. Calcular edad</h6>
+                </div>
+                <div class="card-body">
+                    <h5 class="card-title">Descripción</h5>
+                    <p><small class="text-muted">
+                            Un archivo contiene dos fechas en el formato día (1 a 31), mes (1 a 12) y año (entero de
+                            cuatro dígitos), correspondientes a la fecha de nacimiento y la fecha actual,
+                            respectivamente.
+                            Escribir un programa que calcule y visualice la edad del individuo. Si es la fecha de un
+                            bebé (menos de un año de edad), la edad se debe dar en meses y días; en caso contrario, la
+                            edad se calculará en años.
+                        </small></p>
+                    <form id="-form" class="card-body">
+                        <p>Digite su fecha de nacimiento</p>
+                        <div class="form-group row">
+                            <div class="col-md-12">
+                                <input type="date" class="form-control" id="fecha-nacimiento">
+                            </div>
+                            <p class="p-1"></p>
+                            <div id="result-12" style="display: none;" class="col-md-12 p-2" align="center">
+                                <p style="text-align: left"><strong><em>Resultado:</em></strong></p>
+                                <p id="resultado-fecha-nacimiento"></p>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <div class="card-footer bg border-none text-white">
+                    <div class="col-md-12">
+                        <button id="boton-calcular-edad" class="btn btn-primary btn-block text-center">Calcular</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!---->
+        <div class="card-deck pt-4">
+            <div class="card">
+                <div class="card-header">
+                    <h6>13. Ecuación Lineal</h6>
+                </div>
+                <div class="card-body">
+                    <h5 class="card-title">Descripción</h5>
+                    <p><small class="text-muted">
+                            Un sistema de ecuaciones lineales:
+                            <br> ax + by = c <br>
+                            dx + ey = f <br>
+                            se puede resolver con las siguientes fórmulas:
+                            x= (ce - bf) / (ae - bd) <br> y =(af- cd) / (ae — bd) <br>
+                            Diseñar un programa que lea los coeficientes 4, 6, e, e, d y fy muestre los valores de x e
+                            y.
+
+                        </small>
+                    </p>
+                    <form id="energia-form" class="card-body">
+                        <p>Digite el coefeicientes a, b, c, d, e y f</p>
+                        <div class="form-group row">
+                            <div class="col-md-2">
+                                <input type="text" class="form-control" id="coefeiciente-a" value="" placeholder="a">
+                            </div>
+                            <div class="col-md-2">
+                                <input type="text" class="form-control" id="coefeiciente-b" value="" placeholder="b">
+                            </div>
+                            <div class="col-md-2">
+                                <input type="text" class="form-control" id="coefeiciente-c" value="" placeholder="c">
+                            </div>
+                            <div class="col-md-2">
+                                <input type="text" class="form-control" id="coefeiciente-d" value="" placeholder="d">
+                            </div>
+                            <div class="col-md-2">
+                                <input type="text" class="form-control" id="coefeiciente-e" value="" placeholder="e">
+                            </div>
+                            <div class="col-md-2">
+                                <input type="text" class="form-control" id="coefeiciente-f" value="" placeholder="d">
+                            </div>
+                            <p class="p-1"></p>
+                            <div id="result-13" style="display: none;" class="col-md-12 p-2" align="center">
+                                <p style="text-align: left"><strong><em>Resultado:</em></strong></p>
+                                <p id="resultado-calcular-ecuacion"></p>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <div class="card-footer bg border-none text-white">
+                    <div class="col-md-12">
+                        <button id="boton-ecuacion-lineal" class=" btn btn-primary btn-block text-center">Calcular
+                            ecuación</button>
+                    </div>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-header">
+                    <h6>14. Año Bisiesto</h6>
+                </div>
+                <div class="card-body">
+                    <h5 class="card-title">Descripción</h5>
+                    <p><small class="text-muted">
+                            Escribir un programa que determine si un año es bisiesto. Un año es bisiesto si es
+                            múltiplo de 4 (por ejemplo 1984). Sin embargo, los años múltiplos de 100 sólo son bisiestos
+                            cuando a la vez son múltiples de 400 (por ejemplo, 1800 no es bisiesto, mientras que 2000 sí
+                            lo será).
+                        </small></p>
+                    <form id="-form" class="card-body">
+                        <p>Digite el año</p>
+                        <div class="form-group row">
+                            <div class="col-md-12">
+                                <input type="number" class="form-control" id="year-bisiesto">
+                            </div>
+                            <p class="p-1"></p>
+                            <div id="result-14" style="display: none;" class="col-md-12 p-2" align="center">
+                                <p style="text-align: left"><strong><em>Resultado:</em></strong></p>
+                                <p id="resultado-year-bisiesto"></p>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <div class="card-footer bg border-none text-white">
+                    <div class="col-md-12">
+                        <button id="boton-year-bisiesto" class="btn btn-primary btn-block text-center">Calcular</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!---->
+        <div class="card-deck pt-4">
+            <div class="card">
+                <div class="card-header">
+                    <h6>15. Número de días de un mes</h6>
+                </div>
+                <div class="card-body">
+                    <h5 class="card-title">Descripción</h5>
+                    <p><small class="text-muted">
+                            Escribir un programa que calcule el número de días de un mes, dados los valores
+                            numéricos del mes y el año.
+                        </small>
+                    </p>
+                    <form id="energia-form" class="card-body">
+                        <p>Digite la fecha:</p>
+                        <div class="form-group row">
+                            <div class="col-md-6">
+                                <input type="number" class="form-control" id="month" value="" min="1" max="12"
+                                    maxlength="2" placeholder="2">
+                            </div>
+                            <div class="col-md-6">
+                                <input type="number" class="form-control" id="year" value="" min="1" max="12"
+                                    maxlength="4" placeholder="2019">
+                            </div>
+                            <p class="p-1"></p>
+
+                            <div id="result-15" style="display: none;" class="col-md-12 p-2" align="center">
+                                <p style="text-align: left"><strong><em>Resultado:</em></strong></p>
+                                <p id="resultado-numero-dias"></p>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <div class="card-footer bg border-none text-white">
+                    <div class="col-md-12">
+                        <button id="boton-numero-dias" class=" btn btn-primary btn-block text-center">Calcular</button>
+                    </div>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-header">
+                    <h6>16. Calcular Salario Neto</h6>
+                </div>
+                <div class="card-body">
+                    <h5 class="card-title">Descripción</h5>
+                    <p><small class="text-muted">
+                            Se desea calcular el salario neto semanal de los trabajadores de una empresa de acuerdo
+                            a las siguientes normas:
+                            Horas Semanales trabajadas < 38 a una tasa dada. Horas extras (38 o más) a una tasa 30 por
+                                100 superior a la ordinaria. Impuestos O por 100, si el salario bruto es menor o igual a
+                                50.000 pesetas. Impuestos 10 por 100, si el salario bruto es mayor de 50.000 pesetas.
+                                </small> </p> <form id="-form" class="card-body">
+                                <p>Digite el horas trabajadas y el valor por hora</p>
+                                <div class="form-group row">
+                                    <div class="col-md-6">
+                                        <input type="number" class="form-control" id="horas"
+                                            placeholder="horas trabajadas">
+                                    </div>
+                                    <div class="col-md-6">
+                                        <input type="number" class="form-control" id="valor-hora"
+                                            placeholder="valor por hora">
+                                    </div>
+                                    <p class="p-1"></p>
+
+                                    <div id="result-16" style="display: none;" class="col-md-12 p-2" align="center">
+                                        <p style="text-align: left"><strong><em>Resultado:</em></strong></p>
+                                        <p id="resultado-salario-neto"></p>
+                                    </div>
+                                </div>
+                                </form>
+                </div>
+                <div class="card-footer bg border-none text-white">
+                    <div class="col-md-12">
+                        <button id="boton-salario-neto" class="btn btn-primary btn-block text-center">Convertir</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!---->
+        <div class="card-deck pt-4">
+            <div class="card">
+                <div class="card-header">
+                    <h6>17. Calcular Cambio de Dinero</h6>
+                </div>
+                <div class="card-body">
+                    <h5 class="card-title">Descripción</h5>
+                    <p><small class="text-muted">
+                            Determinar el menor número de billetes y monedas de curso legal equivalentes a cierta
+                            canti- dad de pesetas (Cambio óptimo).
+                        </small>
+                    </p>
+                    <form id="energia-form" class="card-body">
+                        <p>Digite el valor en pesos colombianos</p>
+                        <div class="form-group row">
+                            <div class="col-md-12">
+                                <input type="number" class="form-control" id="monto-pesos" placeholder="$ 100.000">
+                            </div>
+                            <p class="p-1"></p>
+
+                            <div id="myTablaPesos" style="display: none;" class="col-md-12 p-2" align="center">
+                                <p style="text-align: left"><strong><em>Resultado:</em></strong></p>
+                                <table class="table table-bordered table-sm" border="1">
+                                    <thead>
+                                        <tr>
+                                            <td>Cantidad</td>
+                                            <td>Moneda</td>
+                                            <td>Tipo</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody id="tablapesos">
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <div class="card-footer bg border-none text-white">
+                    <div class="col-md-12">
+                        <button id="boton-monto-pesos" class=" btn btn-primary btn-block text-center">Calcular</button>
+                    </div>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-header">
+                    <h6>18. Número Positivo, Negativo o Igual a 0? </h6>
+                </div>
+                <div class="card-body">
+                    <h5 class="card-title">Descripción</h5>
+                    <p><small class="text-muted">
+                            Construir un programa que indique si un número introducido por teclado es positivo,
+                            igual a cero, o negativo.
+                        </small> </p>
+                    <form id="-form" class="card-body">
+                        <p>Digite el número</p>
+                        <div class="form-group row">
+                            <div class="col-md-12">
+                                <input type="number" class="form-control" id="numero-igual" placeholder="566">
+                            </div>
+                            <p class="p-1"></p>
+
+                            <div id="result-18" style="display: none;" class="col-md-12 p-2" align="center">
+                                <p style="text-align: left"><strong><em>Resultado:</em></strong></p>
+                                <p id="resultado-numero-igual"></p>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <div class="card-footer bg border-none text-white">
+                    <div class="col-md-12">
+                        <button id="boton-numero-igual" class="btn btn-primary btn-block text-center">Calcular</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!---->
+    </div>
+    <script src="js/reto2.js"></script>
+    <script src="js/index.js"></script>
+</body>
+
+</html>

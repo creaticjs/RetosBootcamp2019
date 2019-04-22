@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Poppins" rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css"
+        integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/miStilo.css">
+    <title>Clima</title>
+</head>
+
+<body>
+    <nav>
+        <div class="logo">
+            <h4>Bootcamp</h4>
+        </div>
+        <ul class="nav-links">
+            <li>
+                <a href="index.html">Inicio</a>
+            </li>
+            <li>
+                <a href="Reto1.html">Reto 1</a>
+            </li>
+            <li>
+                <a href="reto2.html">Reto 2</a>
+            </li>
+            <li>
+                <a href="reto3.html">Reto 3</a>
+            </li>
+            <li>
+                <a href="Reto4.html">Reto 4</a>
+            </li>
+            <li>
+                <a href="reto5.html">Reto 5</a>
+            </li>
+        </ul>
+        <div class="burger">
+            <div class="line1"></div>
+            <div class="line2"></div>
+            <div class="line3"></div>
+        </div>
+    </nav>
+
+    <div class="container" style="padding:5px">
+        <div id="geolocation-test"></div>
+        <div class="container h-100 p-3">
+            <div class="d-flex justify-content-center h-100">
+                <div class="searchbar">
+                    <input class="search_input" type="text" name="" placeholder="Buscar por nombre de país"
+                        id="nombrePais">
+                    <a href="#" class="search_icon" id="buscars"><i class="fas fa-search"></i></a>
+                </div>
+            </div>
+            <div class="row p-3">
+
+                <div class="col-sm-6">
+                    <div id="App" class="row">
+                        <div class="col-md-6 mx-auto text-center" style="display: none" id="resultPais">
+                            <div class="cbody" id="g">
+                                <h1 id="weatherLocation" class="h3"></h1>
+                                <h3 id="weatherDescription" class="h4"></h3>
+                                <img src="" id="weather-icon">
+                                <h3 id="weatherString"></h3>
+                                <ul class="list-group mt-3">
+                                    <li id="weatherHumedad" class="list-group-item"></li>
+                                    <li id="weatherViento" class="list-group-item"></li>
+                                    <li id="weatherCoordenadas" class="list-group-item"></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-6">
+                    <span>
+                        <form>
+                            <ul class="widget-tabs">
+                                <li class="widget-tabs__item"><a href="/" id="tab-main"
+                                        class="widget-tabs__link--active">
+                                        Principal</a></li>
+                                <li class="widget-tabs__item"><a href="/" id="tab-daily" class="widget-tabs__link">
+                                        Diario</a></li>
+                                <li class="widget-tabs__item"><a href="/" id="tab-hourly" class="widget-tabs__link">
+                                        Hora</a></li>
+                                <li class="widget-tabs__item"><a href="/" id="tab-chart" class="widget-tabs__link">
+                                        Graficas</a></li>
+                                <li class="widget-tabs__item"><a href="/" id="tab-map" class="widget-tabs__link"> Uv</a>
+                                </li>
+                            </ul>
+                        </form>
+                    </span>
+                    <div class="" id="pronostico" style="display: none">
+                        <h3>Previsión del tiempo para 5 días cada 3 horas </h3>
+                        <div id="divTablePrevision" class="table-responsive">
+                            <table id="tablePrevision" style="margin: 0 auto; width:80%"
+                                class="table table-condensed scroll">
+                                <tbody id="listPrevision">
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                    <div class="" id="diario" style="display: none">
+                        <div id="app">
+                            <h3>Previsión del tiempo diario/hora</h3>
+                            <div>
+                                <input type="text" id="ciudad2">
+                                {{ciudad}}
+                                <button @click="getdata(ciudad)">Buscar</button>
+                                <div class="container">
+                                    <div class="row"></div>
+                                    <p></p>
+                                    <table class="table table-condensed scroll">
+                                        <tbody>
+                                            <tr v-for="data in datos">
+                                                <td>{{data.dt_txt}}</td>
+                                                <td>
+                                                    <span>{{data.main.temp}} ºC</span> <br>
+                                                    <span>Humedad: {{data.main.humidity}}</span>
+                                                </td>
+                                                <td>
+                                                    <span>{{data.weather[0]['description']}}</span>
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="" id="hora" style="display: none">
+                        <h3>Previsión del tiempo por hora</h3>
+                    </div>
+                    <div id="ultra" style="display: none">
+                    </div>
+                </div>
+            </div>
+            <br><br>
+            <div id="grafi" style="display: none">
+            </div>
+        </div>
+
+        <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+        <script>
+            var app = new Vue({
+                el: "#app",
+                data: {
+                    datos: [],
+                    ciudad: document.getElementById('ciudad2').value
+                },
+                methods: {
+                    getdata: function (ciudad) {
+                        var ciudad = document.getElementById('ciudad2').value;
+                        url3 =
+                            `https://api.openweathermap.org/data/2.5/forecast/hourly?q=${ciudad}&appid=${idApi}&units=metric&lang=es`;
+                        fetch(url3)
+                            .then(function (response) {
+                                return response.json();
+                            })
+                            .then(function (data) {
+                                console.log(data);
+                                app.datos = data.list;
+                            })
+                            .catch(function (error) {
+                                console.log(error.message);
+                            });
+                    },
+                    getpokemon: function (url) {
+                        fetch(url)
+                            .then(function (response) {
+                                return response.json();
+                            })
+                            .then(function (data) {
+                                console.log(data);
+                            })
+                            .catch(function (error) {
+                                console.log(error.message);
+                            });
+                    }
+                }
+            });
+        </script>
+        <script src="js/jquery-3.3.1.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.3/Chart.min.js"></script>
+        <script src="js/index.js"></script>
+        <script src="js/reto4.js"></script>
+</body>
+
+</html>

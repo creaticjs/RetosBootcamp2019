@@ -1,0 +1,50 @@
+body{
+    background: #74ebd5;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #ACB6E5, #74ebd5);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #ACB6E5, #74ebd5); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+
+table{
+    width: 400px;
+    margin:auto;
+    background-color:#666;
+    border-radius:20px;
+}
+
+.container{
+    padding-top: 10px;
+}
+
+.pantalla{
+    width:400px;
+    height:70px;
+    color:#fff;
+    font-size:30px;
+    text-align:right;
+    margin-bottom:15px;
+}
+
+#s_pantalla{
+color:#3F0;
+height:40px;
+font-size:16px;
+margin-bottom:-3px;
+margin-top:20px;
+}
+
+.btn{
+    font-size:30px;
+    height:80px;
+    border-radius:20px;
+}
+
+h3{
+    margin-top: 5px;
+    text-align:center;
+    color:#fff;
+}
+
+.operaciones2:hover{
+	background-color:#CCC   ;
+}
+

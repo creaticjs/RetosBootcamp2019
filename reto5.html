@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/vue-select@latest/dist/vue-select.css">
+    <link rel="stylesheet" href="css/miStilo.css">
+    <title>Reto #5</title>
+</head>
+
+<body>
+    <nav>
+        <div class="logo">
+            <h4>Bootcamp</h4>
+        </div>
+        <ul class="nav-links">
+            <li>
+                <a href="index.html">Inicio</a>
+            </li>
+            <li>
+                <a href="Reto1.html">Reto 1</a>
+            </li>
+            <li>
+                <a href="reto2.html">Reto 2</a>
+            </li>
+            <li>
+                <a href="reto3.html">Reto 3</a>
+            </li>
+            <li>
+                <a href="Reto4.html">Reto 4</a>
+            </li>
+            <li>
+                <a href="reto5.html">Reto 5</a>
+            </li>
+        </ul>
+        <div class="burger">
+            <div class="line1"></div>
+            <div class="line2"></div>
+            <div class="line3"></div>
+        </div>
+    </nav>
+    <div class="container" id="app">
+        <div class="row">
+            <div class="col-sm-12">
+                <h1 class="text-left">
+                    Factura con VueJs
+                </h1>
+                <div class="form-group">
+                    <label for="" class="control-label">Seleccione el Cliente</label>
+                    <select class="form-control" v-model="clienteadd.clienteSeleccionado.dni" @change="infoCliente">
+                        <option value="">Seleccione...</option>
+                        <option v-for="cliente in clientes" :value="cliente.dni">
+                            {{ cliente.nombre }}
+                        </option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="" class="control-label">Seleccione sus productos</label>
+                    <select class="form-control" v-model="facturacion.productoSeleccionado.producto"
+                        @change="infoProductoSeleccionado">
+                        <option value="">Seleccione...</option>
+                        <option v-for="producto in productos" :value="producto.producto">
+                            {{ producto.descripcion }}
+                        </option>
+                    </select>
+                </div>
+                <hr style="color: #0056b2;" />
+                <div class="panel panel-default" v-show="facturacion.productoSeleccionado.producto != ''">
+                    <div class="panel-heading">
+                        <h3 class="panel-title">Descripción del producto</h3>
+                    </div>
+                    <div class="panel-body">
+                        <div class="row">
+                            <div class="col-sm-12">
+                                <p>
+                                    <strong>Código: </strong> {{ facturacion.productoSeleccionado.producto || '' }}
+                                </p>
+                                <p>
+                                    <strong>Descripción: </strong>
+                                    {{ facturacion.productoSeleccionado.descripcion || '' }}
+                                </p>
+                                <!-- <p>
+                                    <strong>Precio: </strong> ${{facturacion.productoSeleccionado.precio || '' }}
+                                </p>-->
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="panel-footer">
+                        <div class="row">
+                            <div class="col-sm-3">
+                                <label for="" class="control-label"><strong>Precio: </strong></label>
+                            </div>
+                            <div class="col-sm-6">
+                                <input type="number" min="1" v-model="facturacion.productoSeleccionado.precio"
+                                    class="form-control col-sm-6 input-sm" required>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="panel-footer">
+                        <div class="row">
+                            <div class="col-sm-3">
+                                <label for="" class="control-label"><strong>Cantidad: </strong></label>
+                            </div>
+                            <div class="col-sm-6">
+                                <input type="number" min="1" v-model="facturacion.productoSeleccionado.cantidad"
+                                    class="form-control col-sm-6 input-sm" required>
+                            </div>
+                            <div class="col-sm-3 text-right">
+                                <button class="btn btn-primary" @click="agregarLinea">Agregar</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <hr>
+                <div class="card border-primary mb-3" style="max-width: 100rem;">
+                    <div class="card-header border-primary text-white" style="background-color: #006699;">
+                        <h3>NUEVA FACTURA</h3>
+                    </div>
+                    <div class="card-body text-black">
+                        <div class="row align-items-center">
+                            <div class="col">
+                                <div class="panel-footer">
+                                    <div class="row">
+                                        <div class="col-sm-3">
+                                            <label for="" class="control-label"><strong>
+                                                    <h3 class="card-title">FACTURA</h3>
+                                                </strong></label>
+                                        </div>
+                                        <div class="col-sm-6">
+                                            <input type="text" class="form-control col-sm-6 input-sm">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="panel-footer">
+                                    <div class="row">
+                                        <div class="col-sm-3">
+                                            <label for="" class="control-label"><strong>Fecha: </strong></label>
+                                        </div>
+                                        <div class="col-sm-6">
+                                            <input type="text" v-model="horaActual()"
+                                                class="form-control col-sm-6 input-sm" disabled style="background-color:transparent; border: none;">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col">
+                                <h5 class="name">Electro-Popayán </h5>
+                                <div><strong>NIT: </strong>90089000</div>
+                                <div>Calle 5 #9-66 Centro</div>
+                                <div>8231111</div>
+                                <div>Popayán-Cauca</div>
+                            </div>
+                        </div>
+                        <hr style="color: #0056b2;" />
+                        <div class="row align-items-center">
+                            <div class="col">
+                                <div class="form-group row">
+                                    <label for="inputDirnifenifccion" class="col-sm-3 col-form-label"><b>id:</b></label>
+                                    <div class="col-sm-9">
+                                        <input style="background-color:transparent; border: none;" type="number" min="1" class="form-control input-sm" v-model="clienteadd.clienteSeleccionado.dni" disabled>
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <label for="cliente" class="col-sm-3 col-form-label"
+                                        style="max-height: 30%;"><b>Cliente:</b></label>
+                                    <div class="col-sm-9">
+                                        <input style="background-color:transparent; border: none;" type="text" min="1" class="form-control input-sm" v-model="clienteadd.clienteSeleccionado.nombre" disabled>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col">
+                                <div class="form-group row">
+                                    <label for="domicilio" class="col-sm-3 col-form-label"><b>Domicilio:</b></label>
+                                    <div class="col-sm-9">
+                                            <input style="background-color:transparent; border: none;" type="text" min="1" class="form-control input-sm" v-model="clienteadd.clienteSeleccionado.direccion" disabled>
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <label for="domicilio" class="col-sm-3 col-form-label"><b>Teléfono:</b></label>
+                                    <div class="col-sm-9">
+                                            <input style="background-color:transparent; border: none;" type="text" min="1" class="form-control input-sm" v-model="clienteadd.clienteSeleccionado.telefono" disabled>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="table-responsive p-2">
+                        <table class="table table-hover table-hover table-striped">
+                            <thead>
+                                <tr>
+                                    <th style="width: 5%;background-color: #3f95c0; color: white;">Código</th>
+                                    <th style="width: 15%;background-color: #3f95c0; color: white;">Descripción</th>
+                                    <th style="width: 5%;background-color: #3f95c0; color: white;">Cantidad</th>
+                                    <th style="width: 15%;background-color: #3f95c0; color: white;">Precio Unidad
+                                    </th>
+                                    <th style="width: 15%;background-color: #3f95c0; color: white;">Sub Total</th>
+                                    <th style="width: 10%;background-color: #3f95c0; color: white;">% IVA</th>
+                                    <th style="width: 15%;background-color: #3f95c0; color: white;">Total con IVA
+                                    </th>
+                                    <th style="width: 15%;background-color: #3f95c0; color: white;">&nbsp;</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr v-show="!facturacion.productosAgregados.length">
+                                    <td colspan="8">
+                                    </td>
+                                </tr>
+                                <tr v-for="(linea, indice) in facturacion.productosAgregados">
+                                    <td>
+                                        {{ linea.producto }}
+                                    </td>
+                                    <td>
+                                        {{ linea.descripcion}}
+                                    </td>
+                                    <td width="100">
+                                        <input type="number" min="1" class="form-control input-sm"
+                                            v-model="linea.cantidad">
+                                    </td>
+                                    <td>
+                                        <input type="number" min="1" class="form-control input-sm"
+                                            v-model="linea.precio">
+                                    </td>
+                                    <td>
+                                        {{linea.cantidad * linea.precio }}
+                                    </td>
+                                    <td>
+                                        <input type="number" min="1" class="form-control input-sm" v-model="linea.iva">
+                                    </td>
+                                    <td>{{(linea.cantidad * linea.precio)*(linea.iva/100)+(linea.cantidad * linea.precio)}}
+                                    </td>
+                                    <td class="text-right">
+                                        <button class="btn btn-xs btn-danger"
+                                            @click="eliminarLinea(indice)">Emininar</button>
+                                    </td>
+                                </tr>
+                            </tbody>
+                            <tfoot>
+                                <tr>
+                                    <td colspan="7" class="text-left">
+                                        <strong>Sub Total:</strong>
+                                    </td>
+                                    <td>
+                                        <strong>${{ totalLineas }}</strong>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td colspan="7" class="text-left">
+                                        <div class="form-group row">
+                                            <label for="domicilio"
+                                                class="col-sm-3 col-form-label"><b>Descuento:</b></label>
+                                            <div class="col-sm-2">
+                                                <input type="text" class="form-control" id="domicilio"
+                                                    v-model="descuento" placeholder="1%" required>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <strong>${{porcentajeDes}}</strong>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td colspan="7" class="text-left">
+                                        <strong>Total IVA:</strong>
+                                    </td>
+                                    <td>
+                                        <strong>${{ totalIva }}</strong>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td colspan="7" class="text-left">
+                                        <strong>Total de la compra:</strong>
+                                    </td>
+                                    <td>
+                                        <strong>${{ total }}</strong>
+                                    </td>
+                                </tr>
+                            </tfoot>
+                        </table>
+                    </div>
+                </div>
+                <div class="card-footer bg border-info text-white" style="background-color: #006699;">
+                    jeferson@hotmail.com</div>
+            </div>
+        </div>
+    </div>
+    </div>
+    <script src="https://unpkg.com/vue@latest"></script>
+    <script src="https://unpkg.com/vue-select@latest"></script>
+    <script src="js/index.js"></script>
+    <script src="js/reto5.js"></script>
+</body>
+
+</html>

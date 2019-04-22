@@ -1,0 +1,523 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/reto3.css">
+    <link rel="stylesheet" href="css/miStilo.css">
+    <title>Reto #3</title>
+</head>
+
+<body>
+    <nav>
+        <div class="logo">
+            <h4>Bootcamp</h4>
+        </div>
+        <ul class="nav-links">
+            <li>
+                <a href="index.html">Inicio</a>
+            </li>
+            <li>
+                <a href="Reto1.html">Reto 1</a>
+            </li>
+            <li>
+                <a href="reto2.html">Reto 2</a>
+            </li>
+            <li>
+                <a href="reto3.html">Reto 3</a>
+            </li>
+            <li>
+                <a href="Reto4.html">Reto 4</a>
+            </li>
+            <li>
+                <a href="reto5.html">Reto 5</a>
+            </li>
+        </ul>
+        <div class="burger">
+            <div class="line1"></div>
+            <div class="line2"></div>
+            <div class="line3"></div>
+        </div>
+    </nav>
+    <div class="container p-4">
+        <div class="well">
+            <form>
+                <fieldset>
+                    <legend>1. Calcular nuevo salario</legend>
+                    <div class="form-group">
+                        <p>Escribir un programa que solocite el salario actual del empledo y calcule y visualice el
+                            nuevo salario</p>
+                        <input type="text" class="form-control" id="salario" placeholder="9000"><label
+                            id="unit"></label><label id="error1" class="error"></label>
+                        <button type="button" class="btn btn-success btn-block" id="btnSalario">Calcular Nuevo
+                            Salario</button>
+                    </div>
+                    <div class="row">
+                        <div class="col-xs-6 col-md-6">
+                            <p style="text-align: right; vertical-align: middle;"><strong>Su nuevo salario es:</strong>
+                            </p>
+                        </div>
+                        <div class="col-xs-12 col-md-6">
+                            <div class="output" id="res_area" style="visibility:visible;">
+                                <div class="input-group mb-2">
+                                    <div class="input-group-prepend">
+                                        <div class="input-group-text" id="porcentaje"></div>
+                                    </div>
+                                    <input type="text" class="form-control" id="result1">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </fieldset>
+            </form>
+        </div>
+
+        <div class="well">
+            <form>
+                <fieldset>
+                    <legend>2. Constante PI</legend>
+                    <div class="form-group">
+                        <p>Escribir un programa que efectue este calculo con un número de terminos especificados por el
+                            usuario</p>
+                        <input type="text" class="form-control" id="numero" placeholder="digite el número"><label
+                            id="unit"></label><label id="error1" class="error"></label>
+                        <button type="button" class="btn btn-success btn-block" id="btnCalcularPi">Calcular PI</button>
+                    </div>
+                    <div class="row">
+                        <div class="col-xs-6 col-md-6">
+                            <p style="text-align: right; vertical-align: middle;"><strong>El número PI es:</strong>
+                            </p>
+                        </div>
+                        <div class="col-xs-12 col-md-6">
+                            <div class="output" id="res_area" style="visibility:visible;">
+                                <input type="text" class="form-control" id="result2">
+                            </div>
+                        </div>
+                    </div>
+                </fieldset>
+            </form>
+        </div>
+
+        <div class="well">
+            <form>
+                <fieldset>
+                    <legend>3 y 17. n mayor, menor y media </legend>
+                    <div class="form-group" id="divEntrada">
+                        <p>Escribir un programa que calcule y visualice el más grande, el más pequeño y l media de N
+                            números introducidos por el usuario</p>
+                        <input type="text" class="form-control" id="repeticiones" placeholder="digite el número"><label
+                            id="unit"></label><label id="error1" class="error"></label>
+                        <button type="button" class="btn btn-success btn-block" id="creaInput">Calcular PI</button>
+                    </div>
+                    <div class="form-group" id="div_salida">
+                    </div>
+                    <div class="form-group" id="numeroInpus" style="display: none;">
+                        <button type="button" class="btn btn-success btn-block" id="calcularMedia">Calcular</button>
+                    </div>
+                    <div id="media" style="display: none;">
+                        <div class="row">
+                            <div class="col-xs-6 col-md-6">
+                                <p style="text-align: right; vertical-align: middle;"><strong>El número mayor
+                                        es:</strong>
+                                </p>
+                            </div>
+                            <div class="col-xs-12 col-md-6">
+                                <div class="output" id="res_area" style="visibility:visible;">
+                                    <input type="text" class="form-control" id="resultMayor">
+                                </div>
+                            </div>
+                            <div class="col-xs-6 col-md-6">
+                                <p style="text-align: right; vertical-align: middle;"><strong>El número menor
+                                        es:</strong>
+                                </p>
+                            </div>
+                            <div class="col-xs-12 col-md-6">
+                                <div class="output" id="res_area" style="visibility:visible;">
+                                    <input type="text" class="form-control" id="resultMenor">
+                                </div>
+                            </div>
+                            <div class="col-xs-6 col-md-6">
+                                <p style="text-align: right; vertical-align: middle;"><strong>El promedio es:</strong>
+                                </p>
+                            </div>
+                            <div class="col-xs-12 col-md-6">
+                                <div class="output" id="res_area" style="visibility:visible;">
+                                    <input type="text" class="form-control" id="resultPromedio">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </fieldset>
+            </form>
+        </div>
+
+        <div class="well">
+            <form>
+                <fieldset>
+                    <legend>4. Fecha de domingo de pascua</legend>
+                    <div class="form-group">
+                        <p>Realizar un programa que determine esta fecha para los años comprendidos entre 1990 y 2000
+                        </p>
+                        <label id="unit"></label><label id="error1" class="error"></label>
+                        <button type="button" class="btn btn-success btn-block" id="btnCalcularPascua"> Mostrar
+                            fehas</button>
+                    </div>
+                    <div id="divTabla" class="divTablas" style="display: none;">
+                        <table id="myTabla" class="table table-striped">
+                            <thead>
+                                <th>Día</th>
+                                <th>Año</th>
+                            </thead>
+                            <tbody id="fechasPascua">
+                            </tbody>
+                        </table>
+                    </div>
+                </fieldset>
+            </form>
+        </div>
+
+        <div class="well">
+            <form>
+                <fieldset>
+                    <legend>5. Año Bisiesto</legend>
+                    <div class="form-group">
+                        <p>Escribir un programa que determine si un año es bisiesto</p>
+                        <input type="text" class="form-control" id="year-bisiesto" placeholder="digite el número"><label
+                            id="unit"></label><label id="error1" class="error"></label>
+                        <button type="button" class="btn btn-success btn-block" id="btnYearBisiesto">Calcular</button>
+                    </div>
+                    <div class="row">
+                        <div class="col-xs-6 col-md-6">
+                            <p style="text-align: right; vertical-align: middle;"><strong>Resultado:</strong>
+                            </p>
+                        </div>
+                        <div class="col-xs-12 col-md-6">
+                            <div class="output" id="res_area" style="visibility:visible;">
+                                <input type="text" class="form-control" id="result3">
+                            </div>
+                        </div>
+                    </div>
+                </fieldset>
+            </form>
+        </div>
+
+        <div class="well">
+            <form>
+                <fieldset>
+                    <legend>6. Cuadro Magico</legend>
+                    <div class="form-group">
+                        <p>Escribir un programa que visualice un cuadro mágico de orden impar n, comprendido entre 3 y
+                            11; el usuario elige el valor de n.</p>
+                        <input type="text" class="form-control" id="nivel"
+                            placeholder="digite el nivel. Ejemplo 3 = 3*3"><label id="unit"></label><label id="error1"
+                            class="error"></label>
+                        <button type="button" class="btn btn-success btn-block" id="btnCuadroMagico">Mortrar</button>
+                    </div>
+                    <div class="row">
+                        <div class="col-xs-4 col-md-4">
+                            <p style="text-align: right; vertical-align: middle;"><strong>Resultado:</strong></p>
+                        </div>
+                        <div class="col-xs-12 col-md-4">
+                            <div class="output" id="res_area" style="visibility:visible;">
+                                <table id="myTablaCuadro" class="table table-bordered">
+                                    <thead>
+                                    </thead>
+                                    <tbody id="result13">
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </fieldset>
+            </form>
+        </div>
+
+        <div class="well">
+            <form>
+                <fieldset>
+                    <legend>7. Número Perfecto</legend>
+                    <div class="form-group">
+                        <p>Escribir un programa que encuentre los tres primeros números perfectos</p>
+                        <label id="unit"></label><label id="error1" class="error"></label>
+                        <button type="button" class="btn btn-success btn-block" id="btnNumeroPerfecto">Calcular</button>
+                    </div>
+                    <div class="row">
+                        <div class="col-xs-6 col-md-6">
+                            <p style="text-align: right; vertical-align: middle;"><strong>Los tres primeros números
+                                    perfectos son:</strong>
+                            </p>
+                        </div>
+                        <div class="col-xs-12 col-md-6">
+                            <div class="output" id="res_area" style="visibility:visible;">
+                                <input type="text" class="form-control" id="result4">
+                            </div>
+                        </div>
+                    </div>
+                </fieldset>
+            </form>
+        </div>
+
+        <div class="well">
+            <form>
+                <fieldset>
+                    <legend>8. Suma de e^x</legend>
+                    <div class="form-group">
+                        <p>Escribir un programa que tome un valor de x como entrada y visualice la suma para cada uno de
+                            los valores de 1 a 100</p>
+                        <input type="text" class="form-control" id="valorx" placeholder="digite el valor de x"><label
+                            id="unit"></label><label id="error1" class="error"></label>
+                        <button type="button" class="btn btn-success btn-block" id="sumaDeE">Sumar</button>
+                    </div>
+                    <div id="divTablaSuma" class="divTablas" style="display: none;">
+                        <table id="myTablaSuma" class="table table-striped">
+                            <thead>
+                                <th>Posición</th>
+                                <th>Suma</th>
+                            </thead>
+                            <tbody id="sumae">
+                            </tbody>
+                        </table>
+                    </div>
+                </fieldset>
+            </form>
+        </div>
+
+        <div class="well">
+            <form>
+                <fieldset>
+                    <legend>9. Conejos Fibonacci</legend>
+                    <div class="form-group">
+                        <p> El matemático italiano Leonardo Fibonacci propuso el siguiente problema. Suponiendo que un
+                            par
+                            de conejos tiene un par de crías cada mes y cada nueva pareja se hace fértil a la edad de un
+                            mes. Si se dispone de una pareja fértil y ninguno de los conejos muertos <b>¿Cuántas parejas
+                                habrá después de un año?</b> Mejora el problema calculando <b>el número de meses
+                                necesarios para
+                                producir un número dado de conejos.</b></p>
+                        <input type="text" class="form-control" id="parejasConejos"
+                            placeholder="digite el número de parejas"><label id="unit"></label><label id="error1"
+                            class="error"></label>
+                        <button type="button" class="btn btn-success btn-block" id="btnParejasConejos">Calcular</button>
+                    </div>
+                    <div class="row">
+                        <div class="col-xs-6 col-md-6">
+                            <p style="text-align: right; vertical-align: middle;"><strong>Después de 1 año
+                                    habrá:</strong>
+                            </p>
+                        </div>
+                        <div class="col-xs-12 col-md-6">
+                            <div class="output" id="res_area" style="visibility:visible;">
+                                <input type="text" class="form-control" id="result5">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-xs-6 col-md-6">
+                            <p style="text-align: right; vertical-align: middle;"><strong>El número necesario de meses
+                                    para producir:</strong>
+                            </p>
+                        </div>
+                        <div class="col-xs-12 col-md-6">
+                            <div class="output" id="res_area" style="visibility:visible;">
+                                <input type="text" class="form-control" id="result6">
+                            </div>
+                        </div>
+                    </div>
+                </fieldset>
+            </form>
+        </div>
+
+        <div class="well">
+            <form>
+                <fieldset>
+                    <legend>10. Máximo Comun Divisor</legend>
+                    <div class="form-group">
+                        <p>Escribir un programa que calcule el mcd de dos números</p>
+                        <input type="text" class="form-control" id="mcd"
+                            placeholder="Escriba los numeros separados por una coma ,"><label id="unit"></label><label
+                            id="error1" class="error"></label>
+                        <button type="button" class="btn btn-success btn-block" id="btnmcd">Calcular</button>
+                    </div>
+                    <div class="row">
+                        <div class="col-xs-6 col-md-6">
+                            <p style="text-align: right; vertical-align: middle;"><strong>El mcd es:</strong>
+                            </p>
+                        </div>
+                        <div class="col-xs-12 col-md-6">
+                            <div class="output" id="res_area" style="visibility:visible;">
+                                <input type="text" class="form-control" id="result7">
+                            </div>
+                        </div>
+                    </div>
+                </fieldset>
+            </form>
+        </div>
+
+        <div class="well">
+            <form>
+                <fieldset>
+                    <legend>11. Número Primo</legend>
+                    <div class="form-group">
+                        <p>Determinar si un número dado leído del teclado es primo o no</p>
+                        <input type="text" class="form-control" id="numeroPrimo" placeholder="Digite el número"><label
+                            id="unit"></label><label id="error1" class="error"></label>
+                        <button type="button" class="btn btn-success btn-block" id="btnNumeroPrimo">Determinar</button>
+                    </div>
+                    <div class="row">
+                        <div class="col-xs-6 col-md-6">
+                            <p style="text-align: right; vertical-align: middle;"><strong>resultado:</strong>
+                            </p>
+                        </div>
+                        <div class="col-xs-12 col-md-6">
+                            <div class="output" id="res_area" style="visibility:visible;">
+                                <input type="text" class="form-control" id="result8">
+                            </div>
+                        </div>
+                    </div>
+                </fieldset>
+            </form>
+        </div>
+
+        <div class="well">
+            <form>
+                <fieldset>
+                    <legend>12. Suma de serie</legend>
+                    <div class="form-group">
+                        <p>Calcular la suma de la serie 1/1+ 1/2+ ... 1/N donde N es un número que introduce el usuario
+                        </p>
+                        <input type="text" class="form-control" id="sumaSerie" placeholder="Digite el número"><label
+                            id="unit"></label><label id="error1" class="error"></label>
+                        <button type="button" class="btn btn-success btn-block" id="btnSumaSerie">Sumar</button>
+                    </div>
+                    <div class="row">
+                        <div class="col-xs-6 col-md-6">
+                            <p style="text-align: right; vertical-align: middle;"><strong>resultado:</strong>
+                            </p>
+                        </div>
+                        <div class="col-xs-12 col-md-6">
+                            <div class="output" id="res_area" style="visibility:visible;">
+                                <input type="text" class="form-control" id="result9">
+                            </div>
+                        </div>
+                    </div>
+                </fieldset>
+            </form>
+        </div>
+
+        <div class="well">
+            <form>
+                <fieldset>
+                    <legend>13. Suma de serie 1/2^n</legend>
+                    <div class="form-group">
+                        <p>Calcular la suma de los terminos de la serie 1/2^n</p>
+                        <input type="text" class="form-control" id="sumaSerieTerminos"
+                            placeholder="Digite el número"><label id="unit"></label><label id="error1"
+                            class="error"></label>
+                        <button type="button" class="btn btn-success btn-block" id="btnSumaSerieTerminos">Sumar</button>
+                    </div>
+                    <div class="row">
+                        <div class="col-xs-6 col-md-6">
+                            <p style="text-align: right; vertical-align: middle;"><strong>La suma de </strong>
+                            </p>
+                        </div>
+                        <div class="col-xs-12 col-md-6">
+                            <div class="output" id="res_area" style="visibility:visible;">
+                                <div class="input-group mb-2">
+                                    <div class="input-group-prepend">
+                                        <div class="input-group-text" id="formula"></div>
+                                    </div>
+                                    <input type="text" class="form-control" id="result10">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </fieldset>
+            </form>
+        </div>
+
+        <div class="well">
+            <form>
+                <fieldset>
+                    <legend>14. Figura *</legend>
+                    <div class="form-group">
+                        <p>Dibujar en la pantalla un triangulo rectagulo con * </p>
+                        <input type="number" class="form-control" id="figura" placeholder="Digite el número"><label
+                            id="unit"></label><label id="error1" class="error"></label>
+                        <button type="button" class="btn btn-success btn-block" id="btnFigura">Dibujar</button>
+                    </div>
+                    <div class="row">
+                        <div class="col-xs-6 col-md-6">
+                            <p style="text-align: right; vertical-align: middle;"><strong>resultado:</strong>
+                            </p>
+                        </div>
+                        <div class="col-xs-12 col-md-6">
+                            <div class="output" id="res_area" style="visibility:visible;">
+                                <div width="300" height="300" id="figuratriangulo"></div>
+                            </div>
+                        </div>
+                    </div>
+                </fieldset>
+            </form>
+        </div>
+
+        <div class="well">
+            <form>
+                <fieldset>
+                    <legend>15. Número Perfecto </legend>
+                    <div class="form-group">
+                        <p>Escribir un programa que muestre todos los números perfectos hasta un número dado leído del
+                            teclado</p>
+                        <input type="text" class="form-control" id="numeroperfecto"
+                            placeholder="Digite el número"><label id="unit"></label><label id="error1"
+                            class="error"></label>
+                        <button type="button" class="btn btn-success btn-block" id="btnNumeroPerfectoN">Sumar</button>
+                    </div>
+                    <div class="row">
+                        <div class="col-xs-6 col-md-6">
+                            <p style="text-align: right; vertical-align: middle;"><strong>Los números perfectos
+                                    son:</strong>
+                            </p>
+                        </div>
+                        <div class="col-xs-12 col-md-6">
+                            <div class="output" id="res_area" style="visibility:visible;">
+                                <input type="text" class="form-control" id="result11">
+                            </div>
+                        </div>
+                    </div>
+                </fieldset>
+            </form>
+        </div>
+
+        <div class="well">
+            <form>
+                <fieldset>
+                    <legend>16. Número natural N</legend>
+                    <div class="form-group">
+                        <p>Escribir un programa que muestre todos los números perfectos hasta un número dado leído del
+                            teclado</p>
+                        <input type="text" class="form-control" id="numeroNatural" placeholder="Digite el número"><label
+                            id="unit"></label><label id="error1" class="error"></label>
+                        <button type="button" class="btn btn-success btn-block" id="btnNumeroNatural">Encontrar</button>
+                    </div>
+                    <div class="row">
+                        <div class="col-xs-6 col-md-6">
+                            <p style="text-align: right; vertical-align: middle;"><strong>Resultado:</strong>
+                            </p>
+                        </div>
+                        <div class="col-xs-12 col-md-6">
+                            <div class="output" id="res_area" style="visibility:visible;">
+                                <input type="text" class="form-control" id="result12">
+                            </div>
+                        </div>
+                    </div>
+                </fieldset>
+            </form>
+        </div>
+        <script src="js/reto3.js"></script>
+        <script src="js/index.js"></script>
+</body>
+
+</html>
